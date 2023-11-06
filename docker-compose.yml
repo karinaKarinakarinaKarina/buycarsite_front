@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  front:
+    build: .
+    networks:
+      - my-network
+    ports:
+      - "8000:8000"
+
+networks:
+  my-network:
+    name: carParserNetwork
+    driver: bridge

@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY . /app
 
-EXPOSE 5000
+EXPOSE 8000
 
-CMD [ "python", "-m", "http.server", "5000" ]
+CMD [ "python", "-m", "http.server", "8000" ]
