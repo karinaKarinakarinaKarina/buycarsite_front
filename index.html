@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
+<script src="src/components/index.js"></script>
     <header>
         <div class="header__line"></div>
             <div class="container">
@@ -37,67 +38,69 @@
         </div>
         <div class="filters_cars">
             <div class="line1">
-                <div class="filters">
-                    <div class="filter__city">
-                        <div class="choose">Выбрать город:</div>
-                        <select name="city" class="filt" autocomplete="off">
-                            <option value="city">
-                                city
-                            </option>
-                        </select>
-                    </div>
-                    <div class="filter">
-                        <div class="choose">Марку:</div>
-                        <select name="brand" class="filt" autocomplete="off">
-                                <option value="brand">
-                                    brand
+                <form id="filtersForm">
+                    <div class="filters">
+                        <div class="filter__city">
+                            <div class="choose">Выбрать город:</div>
+                            <select id="city" name="city" class="filt" autocomplete="off">
+                                <option>
+                                    city
                                 </option>
-                        </select>
+                            </select>
+                        </div>
+                        <div class="filter">
+                            <div class="choose">Марку:</div>
+                            <select id="brand" name="brand" class="filt" autocomplete="off">
+                                    <option>
+                                        brand
+                                    </option>
+                            </select>
+                        </div>
+                        <div class="filter">
+                            <div class="choose">Модель:</div>
+                            <select id="model" name="model" class="filt" autocomplete="off">
+                                    <option>
+                                        model
+                                    </option>
+                            </select>
+                        </div>
+                        <div class="filter">
+                            <div class="choose">Год выпуска:</div>
+                            <select id="year" name="year" class="filt" autocomplete="off">
+                                    <option>
+                                        year
+                                    </option>
+                            </select>
+                        </div>
+                        <div class="filter">
+                            <div class="choose">Цена:</div>
+                            <div class="price_from">от</div>
+                            <input type="number" name="price_from">
+                            <div class="price_to">до</div>
+                            <input type="number" name="price_to">
+                        </div>
+                        <div class="filter">
+                            <div class="choose">Тип коробки:</div>
+                            <select id="trans" name="transmission" class="filt" autocomplete="off">
+                                    <option>
+                                        tr
+                                    </option>
+                            </select>
+                        </div>
+                        <button type="submit" id="sub">Поиск</button>
                     </div>
-                    <div class="filter">
-                        <div class="choose">Модель:</div>
-                        <select name="model" class="filt" autocomplete="off">
-                                <option value="model">
-                                    model
-                                </option>
-                        </select>
-                    </div>
-                    <div class="filter">
-                        <div class="choose">Год выпуска:</div>
-                        <select name="year" class="filt" autocomplete="off">
-                                <option value="year">
-                                    year
-                                </option>
-                        </select>
-                    </div>
-                    <div class="filter">
-                        <div class="choose">Цена:</div>
-                        <div class="price_from">от</div>
-                        <input type="number" name="price_from">
-                        <div class="price_to">до</div>
-                        <input type="number" name="price_to">
-                    </div>
-                    <div class="filter">
-                        <div class="choose">Тип коробки:</div>
-                        <select name="transmission" class="filt" autocomplete="off">
-                                <option value="tr">
-                                    tr
-                                </option>
-                        </select>
-                    </div>
-                    <a href="#" class="search_button">Поиск</a>
-                </div>
-            </div>
+                </form>
                 <a class="cars1" href="#">
-                    <div class="cars__name">Some n</div>
+                    <div class="cars__name" id="name_cars1"></div>
                     <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
-                    <div class="cars__price">Some e</div>
+                    <div class="cars__price" id="price_cars1"></div>
                 </a>
                 <a class="cars1" href="#">
                     <div class="cars__name">Some name</div>
                     <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
                     <div class="cars__price">Some price</div>
                 </a>
+
             </div>
 
             <div class="line2">
@@ -119,5 +122,6 @@
             </div>
         </div>
             <a href="#" class="custom-button">Показать следующие объявления</a>
+    </div>
 </body>
 </html>
