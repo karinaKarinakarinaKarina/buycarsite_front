@@ -2,16 +2,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyCar</title>
+    <link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
-    <h1>CarParser</h1>
-    <a href="login.html">
-        <button>Войти</button>
-    </a>
-    <br>
-    <a href="registration.html">
-        <button>Зарегистрироваться</button>
-    </a>
+    <header>
+        <div class="header__line"></div>
+            <div class="container">
+                <div class="logo">
+                    <a href="#">Buycar</a>
+                </div>
+                <div class="search_acc">
+                    <div class="search">
+                        <form>
+                            <input type="text" class="search1">
+                            <a href="#" class="search-icon">
+                                <img src="src/images/image_21.png" alt="Поиск">
+                            </a>
+                        </form>
+                    </div>
+                    <div class="acc">
+                        <a class="login" href="#">
+                            Войти
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <div class="white-block">
+        <div class="main__text">Добро пожаловать на наш сайт! Наша компания, одна из лучших в России - мы гарантируем безопасность сделки<br> и качество услуг для каждого любимого клиента. </div>
+        <div class="img1">
+            <img src="src/images/image1.png" alt="pic">
+        </div>
+        <div class="filters_cars">
+            <div class="line1">
+                <div class="filters">
+
+                    <div class="filter__city">
+                        <div class="choose">Выбрать город:</div>
+                        <select name="city" class="filt" autocomplete="off">
+                            <option value="city">
+                                city
+                            </option>
+                        </select>
+                    </div>
+                    <div class="filter">
+                        <div class="choose">Марку:</div>
+                        <select name="brand" class="filt" autocomplete="off">
+                                <option value="brand">
+                                    brand
+                                </option>
+                        </select>
+                    </div>
+                    <div class="filter">
+                        <div class="choose">Модель:</div>
+                        <select name="model" class="filt" autocomplete="off">
+                                <option value="model">
+                                    model
+                                </option>
+                        </select>
+                    </div>
+                    <div class="filter">
+                        <div class="choose">Год выпуска:</div>
+                        <select name="year" class="filt" autocomplete="off">
+                                <option value="year">
+                                    year
+                                </option>
+                        </select>
+                    </div>
+                    <div class="filter">
+                        <div class="choose">Цена:</div>
+                        <div class="price_from">от</div>
+                        <input type="number" name="price_from">
+                        <div class="price_to">до</div>
+                        <input type="number" name="price_to">
+                    </div>
+                    <div class="filter">
+                        <div class="choose">Тип коробки:</div>
+                        <select name="transmission" class="filt" autocomplete="off">
+                                <option value="tr">
+                                    tr
+                                </option>
+                        </select>
+                    </div>
+                    <a href="#" class="search_button">Поиск</a>
+                </div>
+            </div>
+                <a class="cars1" href="#">
+                    <div class="cars__name">Some n</div>
+                    <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
+                    <div class="cars__price">Some e</div>
+                </a>
+                <a class="cars1" href="#">
+                    <div class="cars__name">Some name</div>
+                    <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
+                    <div class="cars__price">Some price</div>
+                </a>
+
+            </div>
+
+            <div class="line2">
+                <a class="cars2" href="#">
+                    <div class="cars__name">Some name</div>
+                    <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
+                    <div class="cars__price">Some price</div>
+                </a>
+                <a class="cars1" href="#">
+                    <div class="cars__name">Some name</div>
+                    <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
+                    <div class="cars__price">Some price</div>
+                </a>
+                <a class="cars1" href="#">
+                    <div class="cars__name">Some name</div>
+                    <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
+                    <div class="cars__price">Some price</div>
+                </a>
+            </div>
+        </div>
+            <a href="#" class="custom-button">Показать следующие объявления</a>
 </body>
 </html>
