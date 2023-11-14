@@ -1,29 +1,24 @@
-const form = document.getElementById('loginForm');
+const form = document.getElementById('{nameForm}');
 if (form != null){
     form.addEventListener('submit', (event) => {
       event.preventDefault();
 
       const formData = new FormData(form);
 
-      fetch('http://localhost:5000/login', {
+      fetch('http://localhost:5000/', {
         method: 'POST',
         body: formData
       })
       .then(response => response.json())
-      .then(data => login(data))
+      .then(data => output(data))
       .catch(error => console.error(error));
     });
 }
-function login(data){
+function output(data){
     console.log(data)
-    let name = data.username.toString()
-    if (name != ''){
-       location.href = 'account.html';
-       console.log("GOOD")
-    }
-    else{
-       let HTMLData = `<p>Error: ${data.message}</p>`
-       document.getElementById("data").innerHTML = HTMLData
-       console.log("NOT GOOD")
+    if (data.lens <= 2){
+        let InputToHTML = `<p>
+            
+        </p>`
     }
 }
