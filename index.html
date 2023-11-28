@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
+    <script src="src/components/index.js"></script>
     <header>
         <div class="header__line"></div>
             <div class="container">
@@ -37,11 +38,11 @@
         </div>
         <div class="filters_cars">
             <div class="line1">
-                <form>
+                <form id="filtersForm">
                     <div class="filters">
                         <div class="filter__city">
                             <div class="choose">Выбрать город:</div>
-                            <select name="city" class="filt" autocomplete="off">
+                            <select id="city" name="city" class="filt" autocomplete="off">
                                 <option value="city">
                                     city
                                 </option>
@@ -49,7 +50,7 @@
                         </div>
                         <div class="filter">
                             <div class="choose">Марку:</div>
-                            <select name="brand" class="filt" autocomplete="off">
+                            <select id="brand" name="brand" class="filt" autocomplete="off">
                                     <option value="brand">
                                         brand
                                     </option>
@@ -57,7 +58,7 @@
                         </div>
                         <div class="filter">
                             <div class="choose">Модель:</div>
-                            <select name="model" class="filt" autocomplete="off">
+                            <select id="model" name="model" class="filt" autocomplete="off">
                                     <option value="model">
                                         model
                                     </option>
@@ -65,7 +66,7 @@
                         </div>
                         <div class="filter">
                             <div class="choose">Год выпуска:</div>
-                            <select name="year" class="filt" autocomplete="off">
+                            <select id="year" name="year" class="filt" autocomplete="off">
                                     <option value="year">
                                         year
                                     </option>
@@ -80,7 +81,7 @@
                         </div>
                         <div class="filter">
                             <div class="choose">Тип коробки:</div>
-                            <select name="transmission" class="filt" autocomplete="off">
+                            <select id="trans" name="transmission" class="filt" autocomplete="off">
                                     <option value="tr">
                                         tr
                                     </option>
@@ -90,9 +91,9 @@
                     </div>
                 </form>
                 <a class="cars1" href="#">
-                    <div class="cars__name">Some n</div>
+                    <div class="cars__name" id="name_cars1">Some n</div>
                     <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
-                    <div class="cars__price">Some e</div>
+                    <div class="cars__price" id="price_cars1"></div>
                 </a>
                 <a class="cars1" href="#">
                     <div class="cars__name">Some name</div>
