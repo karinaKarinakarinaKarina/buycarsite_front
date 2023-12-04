@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;900&family=Saira&display=swap');
+
+
+* {
+    margin:0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    position: relative;
+}
+
+.container {
+    width: 1315px;
+    height: 46px;
+    margin: 26px auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+}
+
+.search_acc {
+    margin-left: px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-top: 10px;
+    margin-left: 16px;
+    width: 429px;
+    height: 68px;
+    flex-shrink: 0;
+}
+
+.logo a {
+    color: #FFF;
+    text-align: right;
+    font-family: Saira;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px; /* 52.5% */
+}
+
+.search {
+    position: relative;
+    display: flex;
+}
+
+.search1 {
+    width: 482.121px;
+    height: 43px;
+    flex-shrink: 0;
+    border: 1px solid #DDD;
+}
+
+a.search-icon {
+    position: absolute;
+    width: 30px;
+    height: 29px;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.acc {
+    margin-bottom: 5px;
+}
+
+.account-icon {
+    width: 39px;
+    height: 35px;
+    margin-left: 49px;
+    position: relative;
+    top: 6px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Чёрный фон для всего сайта */
+}
+
+.white-block {
+    background-color: #fff; /* Белый фон для блока */
+    width: 1440px;
+    height: 2010px;
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+}
+
+.main__text {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center;
+    margin-top: 28px;
+    margin-left: 44px;
+    transform: translateY(44px);
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    color: #FFF;
+    text-align: right;
+    font-family: Saira;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px; /* 116.667% */
+    margin-left: 42px;
+}
+
+.account-line {
+    width: 107px;
+    height: 0px;
+    flex-shrink: 0;
+    stroke-width: 1px;
+    border-top: 1px solid #A78989;
+    margin-left: 12px;
+    margin-top: 5px;
+}
+
+.city-label {
+    width: 89px;
+    height: 26px;
+    flex-shrink: 0;
+    text-align: center;
+    font-style: normal;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #4E4F3A;
+    line-height: 20px;
+    margin-left: 25px;
+    margin-top: 4px;
+}
+
+
+.img1 {
+    width: 100%;
+    text-align: center;
+    margin-left: -17px;
+    margin-top: 72px;
+}
+
+.img1 img {
+    width: 1048px;
+    height: 539px;
+    flex-shrink: 0;
+}
+
+.color-bar {
+    background-color: #D9D9D9;
+    width: 1206px;
+    height: 47px;
+    flex-shrink: 0;
+    margin: 64px auto;
+    transform: translateX(-40px);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 96px 12px 37px;
+    position: relative;
+}
+
+.color-bar .filt {
+    position: relative;
+}
+
+.color-bar .filt::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    visibility: hidden;
+}
+
+.color-bar .filt:hover::after {
+    transform: scaleX(1);
+    visibility: visible;
+}
+
+.filter__city {
+    display: flex;
+    margin-top: 68px;
+    margin-left: 34px;
+}
+
+.choose{
+    color: #000;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 18px;
+}
+
+[name="city"].filt {
+    width: 261px;
+    height: 24px;
+    margin-left: 24px;
+    background: #D9D9D9;
+}
+
+.filter{
+    display: flex;
+    margin-left: 34px;
+    margin-top: 35px;
+}
+
+[name="brand"].filt {
+    width: 261px;
+    height: 24px;
+    margin-left: 107px;
+    background: #D9D9D9;
+}
+
+[name="model"].filt {
+    width: 261px;
+    height: 24px;
+    margin-left: 94px;
+    background: #D9D9D9;
+}
+
+[name="year"].filt {
+    width: 261px;
+    height: 24px;
+    margin-left: 48px;
+    background: #D9D9D9;
+}
+
+.price_from {
+    color: #000;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 18px;
+    margin-left: 120px;
+}
+
+input[type="number"] {
+    width: 96px;
+    height: 24px;
+    background: #D9D9D9;
+    margin-left: 8px;
+}
+
+.price_to {
+    color: #000;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 18px;
+    margin-left: 8px;
+}
+
+[name="transmission"].filt {
+    width: 261px;
+    height: 24px;
+    margin-left: 50px;
+    background: #D9D9D9;
+}
+
+#sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 18px; /* 90% */
+    width: 167px;
+    height: 38px;
+    background: #000;
+    margin-left: 168px;
+    margin-top: 58px;
+}
+
+.custom-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 446px;
+    height: 56px;
+    margin: 90px auto;
+    border: 1px solid #1A1A1A;
+    background: #1A1A1A;
+    cursor: pointer;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 56px;
+    color: #F7F7F7;
+}
+
+input, select {
+    border: none;
+    outline: none;
+}
+
+.line1 {
+    display: flex;
+}
+
+.cars {
+    margin-top: 69px;
+    margin-left: 32px;
+    width: 445px;
+    height: 416px;
+    flex-shrink: 0;
+    background-color: #000;
+}
+
+.cars__name {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 22px;
+    margin-left: 144px;
+    margin-top: 26px;
+}
+
+.cars__img {
+    margin-top: 26px;
+    margin-left: 33px;
+}
+
+.cars__price {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    margin-left: 184px;
+    margin-top: 14px;
+}
+
+.cars1 {
+    margin-top: 69px;
+    margin-left: 24px;
+    width: 445px;
+    height: 416px;
+    flex-shrink: 0;
+    background-color: #000;
+}
+
+.line2 {
+    display: flex;
+}
+
+.cars2 {
+    margin-top: 69px;
+    margin-left: 32px;
+    width: 445px;
+    height: 416px;
+    flex-shrink: 0;
+    background-color: #000;
+}
+
+footer {
+    display: flex;
+    width: 1440px;
+    height: 177px;
+    background: #000;
+}
+
+.footer__info {
+    margin-left: 54px;
+    display: flex;
+    margin-top: 18px;
+}
+
+
+.footer__boldtext {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    display: block;
+}
+
+.projects_contacts {
+    margin-left: 80px;
+}
+
+[name="press-center"].footer__boldtext, [name="contacts"].footer__boldtext {
+    margin-top: 14px;
+}
+
+.footer__regulartext {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+    margin-top: 16px;
+}
+
+.number_mail {
+    margin-top: -16px;
+    margin-left: 80px;
+}
+
+.subscribe__input {
+    width: 280px;
+    height: 33px;
+    background: #FFF;
+}
+
+.subscribe {
+    margin-left: 540px;
+    margin-top: 64px;
+}
+
+.send-icon {
+    margin-left: -20px;
+}

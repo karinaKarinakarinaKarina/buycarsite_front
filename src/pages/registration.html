@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+	<link rel="stylesheet" href="../styles/style_login.css">
+</head>
+<body>
+	<header>
+        <div class="header__line"></div>
+            <div class="container">
+                <div class="logo">
+                    <a href="/index.html">Buycar</a>
+                </div>
+                <div class="search_acc">
+                    <div class="search">
+                        <form>
+                            <input type="text" class="search1">
+                            <a href="#" class="search-icon">
+                                <img src="../images/image_21.png" alt="Поиск">
+                            </a>
+                        </form>
+                    </div>
+                    <div class="acc">
+                        <a class="login" href="#">
+                            Войти
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </header>
+	<div class="white-block">
+        <a href="/index.html" class="return">Вернуться на главную</a>
+		<form id="registrationForm">
+			<table class="fils">
+				<tr>
+					<td class="login_text">Как к вам обращаться?</td>
+					<td><input type="text"
+							name="nickname"
+							minlength="3"
+							maxlength="40"
+							size="10"></td>
+				</tr>
+				<tr>
+					<td class="login_text">Логин</td>
+					<td><input type="text"
+						name="login"
+						minlength="6"
+						maxlength="10"
+						size="10"></td>
+				</tr>
+				<tr>
+					<td class="login_text">Пароль</td>
+					<td><input type="password"
+						name="password"
+						minlength="6"
+						maxlength="10"
+						size="10"></td>
+				</tr>
+				<tr>
+					<td class="login_text">Повторите пароль</td>
+					<td><input type="password"
+						name="password2"
+						minlength="6"
+						maxlength="10"
+						size="10"></td>
+				</tr>
+				<tr>
+					<td><button type="submit" id="subreg">Зарегистрироваться</button></td>
+				</tr>
+			</table>
+		</form>
+		<footer id="footerreg">
+            <div class="footer__info">
+                <div class="company">
+                    <a href="#" class="footer__boldtext">Компания</a>
+                    <a href="#" class="footer__regulartext">О компании</a>
+                    <a href="#" class="footer__regulartext">Команда</a>
+                    <a href="#" class="footer__regulartext">Партнеры</a>
+                    <a href="#" class="footer__regulartext">Документы</a>
+                </div>
+                <div class="projects_contacts">
+                    <a href="#" class="footer__boldtext">Проекты</a>
+                    <a href="#" class="footer__boldtext" name="press-center">Пресс-центр</a>
+                    <a href="#" class="footer__boldtext" name="contacts">Контакты</a>
+                </div>
+                <div class="number_mail">
+                    <div class="footer__regulartext">Моб. телефон : 8-800-355-35-35</div>
+                    <div class="footer__regulartext">Почта: buycar@gmail.com</div>
+                    <div class="footer__regulartext">Телеграмм: @buuuycaarplease</div>
+                </div>
+            </div>
+            <div class="subscribe">
+                <input class="subscribe__input" placeholder="Подписаться">
+                <a href="#" class="send-icon">
+                    <img src="../images/image28.png">
+                </a>
+            </div>
+        </footer>
+	</div>
+<script src="registration.js" type="module"></script>
+<p style="color:#FF0000" id="data"></p>
+
+</body>
+</html>
