@@ -1,50 +1,6 @@
-const api_url =
-      "http://localhost:5000/"
-
 var listAds = [];
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    fetch(api_url)
-        .then(response => response.json())
-        .then(data => {
-            const selectCity = document.getElementById('city');
-            selectCity.innerHTML = '';
-            data.cities.forEach(item => InsertOptions(selectCity, item));
-
-            const selectBrand = document.getElementById('brand');
-            selectBrand.innerHTML = '';
-            data.brands.forEach(item => InsertOptions(selectBrand, item));
-
-            const selectModel = document.getElementById('model');
-            selectModel.innerHTML = '';
-            data.models.forEach(item => InsertOptions(selectModel, item));
-
-            const selectYear = document.getElementById('year');
-            selectYear.innerHTML = '';
-            data.years.forEach(item => InsertOptions(selectYear, item));
-
-            const selectTransmissions = document.getElementById('trans');
-            selectTransmissions.innerHTML = '';
-            data.transmissions.forEach(item => InsertOptions(selectTransmissions, item));
-            
-            viewCars(data.ads, true);
-        })
-        .catch(error => {
-            console.error('Error fetching list:', error);
-        });
-});
-
-function InsertOptions(select, item){
-    const option = document.createElement('option');
-    option.value = item;
-    option.textContent = item;
-    select.appendChild(option);
-}
-
 function viewCars(list, flag){
     var allCars = document.getElementById('allCars');
-    listAds = [];
     if (list.length != 0){
         const Line1 = document.getElementById('line1'); 
         var count = 0;
@@ -123,4 +79,24 @@ function viewCars(list, flag){
             Line1.appendChild(divLine1);
         }
     }
+}
+
+const form = document.getElementById('filtersForm');
+if (form != null){
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch("http://localhost:5000/", {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log("siuuuu");
+       viewCars(data.ads, true)
+      })
+      .catch(error => console.error(error));
+    });
 }

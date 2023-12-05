@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
 </head>
 <body>
     <script src="src/components/index.js"></script>
+    <script src="src/components/postIndex.js" type="module"></script>
     <header>
         <div class="header__line"></div>
             <div class="container">
@@ -38,7 +39,7 @@
         </div>
         <div class="filters_cars" id="allCars">
             <div class="line1" id="line1">
-                <form id="filtersForm" method="post" action="http://localhost:8000/">
+                <form id="filtersForm">
                     <div class="filters">
                         <div class="filter__city">
                             <div class="choose">Выбрать город:</div>
@@ -90,6 +91,7 @@
                         <button type="submit" id="submit">Поиск</button>
                     </div>
                 </form>
+                <div id="carsInLine1"></div>
             </div>
 
         </div>
