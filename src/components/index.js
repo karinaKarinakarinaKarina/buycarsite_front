@@ -1,6 +1,9 @@
 const api_url =
       "http://localhost:5000/"
 
+var listAds = [];
+
+
 document.addEventListener('DOMContentLoaded', function() {
     fetch(api_url)
         .then(response => response.json())
@@ -24,24 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const selectTransmissions = document.getElementById('trans');
             selectTransmissions.innerHTML = '';
             data.transmissions.forEach(item => InsertOptions(selectTransmissions, item));
-
-//            const divCar1Name = document.getElementById('name_cars1');
-//            const divCar1Price = document.getElementById('price_cars1');
-//            data.ads.forEach((item, index) => {
-//                const prphDC1N = document.createElement('p');
-//                prphDC1N.textContent = `${item.brand} ${item.model}, ${item.year}`;
-//                const prphDC1P = document.createElement('p');
-//                prphDC1N.textContent = `${item.price} ₽`;
-//                console.log(index)
-//                if (index < 2) {
-//                    divCar1Name.appendChild(prphDC1N);
-//                    divCar1Price.appendChild(prphDC1P);
-//                } else {
-//                    const newDiv = document.createElement('div');
-//                    newDiv.appendChild(prphDC1N);
-//                    divCar1Name.appendChild(newDiv);
-//                }
-//            });
+            
+            viewCars(data.ads, true);
         })
         .catch(error => {
             console.error('Error fetching list:', error);
@@ -53,4 +40,87 @@ function InsertOptions(select, item){
     option.value = item;
     option.textContent = item;
     select.appendChild(option);
+}
+
+function viewCars(list, flag){
+    var allCars = document.getElementById('allCars');
+    if (list.length != 0){
+        const Line1 = document.getElementById('line1');
+        var count = 0;
+        var Line2 = document.createElement('div');
+        Line2.classList.add("line2");    
+        
+        list.forEach((item, index) => {
+            const divName = document.createElement('div');
+            divName.classList.add("cars__name");
+            divName.textContent = `${item.brand} ${item.model}, ${item.year}`
+            const Img = document.createElement('img');
+            Img.classList.add("cars__img");
+            Img.alt = "Image";
+            Img.src = `${item.image}`;
+            Img.width = "381";
+            Img.height = "285";
+            const divPrice = document.createElement('div');
+            divPrice.classList.add("cars__price");
+            divPrice.textContent = `${item.price} ₽`
+            const tagA = document.createElement('a');
+            tagA.classList.add("cars1");
+            tagA.appendChild(divName);
+            tagA.appendChild(Img);
+            tagA.appendChild(divPrice);
+            if (flag){
+                if (index >= 2 && index < 6) {
+                    if(count!=3){
+                        Line2.appendChild(tagA);
+                    }
+                    else{
+                        allCars.appendChild(Line2);
+                    }
+                    count = count + 1;
+                }
+                else if (index <= 1){
+                    Line1.appendChild(tagA);
+                }
+                else{
+                    listAds.push(item);
+                }
+            }
+            else {
+                var btn = document.getElementById("nextAds");
+                if (count != 3 ){
+                    Line2.appendChild(tagA);
+                }
+                else{
+                    allCars.appendChild(Line2);
+                    Line2 = document.createElement('div');
+                    Line2.classList.add("line2");
+                    Line2.appendChild(tagA);
+                    count = 0;
+                    btn.remove();
+                }
+                count = count+1;
+
+            }
+        });
+    }
+}
+
+const form = document.getElementById('filtersForm');
+if (form != null){
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch("http://localhost:5000/", {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF")
+        viewCars(data.ads, true)
+      })
+      .catch(error => console.error(error));
+    });
 }
