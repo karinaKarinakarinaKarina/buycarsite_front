@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
 </head>
 <body>
     <script src="src/components/index.js"></script>
+    <script src="src/components/postIndex.js" type="module"></script>
     <header>
         <div class="header__line"></div>
             <div class="container">
@@ -36,8 +37,8 @@
         <div class="img1">
             <img src="src/images/image1.png" alt="pic">
         </div>
-        <div class="filters_cars">
-            <div class="line1">
+        <div class="filters_cars" id="allCars">
+            <div class="line1" id="line1">
                 <form id="filtersForm">
                     <div class="filters">
                         <div class="filter__city">
@@ -87,41 +88,14 @@
                                     </option>
                             </select>
                         </div>
-                        <button type="submit" id="sub">Поиск</button>
+                        <button type="submit" id="submit">Поиск</button>
                     </div>
                 </form>
-                <a class="cars1" href="#">
-                    <div class="cars__name" id="name_cars1">Some n</div>
-                    <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
-                    <div class="cars__price" id="price_cars1"></div>
-                </a>
-                <a class="cars1" href="#">
-                    <div class="cars__name">Some name</div>
-                    <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
-                    <div class="cars__price">Some price</div>
-                </a>
-
+                <div id="carsInLine1"></div>
             </div>
 
-            <div class="line2">
-                <a class="cars1" href="#">
-                    <div class="cars__name">Some name</div>
-                    <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
-                    <div class="cars__price">Some price</div>
-                </a>
-                <a class="cars1" href="#">
-                    <div class="cars__name">Some name</div>
-                    <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
-                    <div class="cars__price">Some price</div>
-                </a>
-                <a class="cars1" href="#">
-                    <div class="cars__name">Some name</div>
-                    <img src="src/images/car.jpg" class="cars__img" alt="Image" width="381" height="285">
-                    <div class="cars__price">Some price</div>
-                </a>
-            </div>
         </div>
-        <a href="#" class="custom-button">Показать следующие объявления</a>
+        <button class="custom-button" id="nextAds" onclick="viewCars(listAds, false)">Показать следующие объявления</button>
         <footer>
             <div class="footer__info">
                 <div class="company">

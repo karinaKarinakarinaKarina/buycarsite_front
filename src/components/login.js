@@ -18,12 +18,15 @@ function login(data){
     console.log(data)
     let name = data.username.toString()
     if (name != ''){
-       location.href = 'account.html';
-       console.log("GOOD")
+       location.href = 'http://localhost:8000/';
     }
     else{
-       let HTMLData = `<p>Error: ${data.message}</p>`
-       document.getElementById("data").innerHTML = HTMLData
-       console.log("NOT GOOD")
+      while (document.getElementById("errorText") != null){
+        document.getElementById("errorText").remove();
+       }
+       let tagA = document.createElement("a");
+       tagA.id = "errorText";
+       tagA.textContent = `${data.message}`
+       document.getElementById("error").appendChild(tagA);
     }
 }

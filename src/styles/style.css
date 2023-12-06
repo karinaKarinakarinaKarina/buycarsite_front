@@ -283,7 +283,7 @@ input[type="number"] {
     background: #D9D9D9;
 }
 
-#sub {
+#submit {
     display: flex;
     justify-content: center;
     align-items: center;
