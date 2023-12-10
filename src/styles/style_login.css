@@ -256,7 +256,7 @@ td {
     width: 1440px;
     height: 177px;
     background: #000;
-    margin-top: 106px;
+    margin-top: 86px;
 }
 
 .footer__info {
@@ -313,10 +313,16 @@ td {
 }
 
 .send-icon {
-    margin-left: -20px;
+    margin-left: -29px;
+    background: none;
+    border: none;
 }
 
 input, select {
     border: none;
     outline: none;
+}
+
+#error {
+    margin-left: 320px;
 }
