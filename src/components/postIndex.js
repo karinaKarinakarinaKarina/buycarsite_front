@@ -1,3 +1,4 @@
+import { auth, username } from './login.js';
 var listAds = [];
 function viewCars(list, flag){
     var allCars = document.getElementById('allCars');
@@ -81,6 +82,22 @@ function viewCars(list, flag){
     }
 }
 
+function insertAuth(){
+    var div = document.getElementById('acc');
+    if (auth){
+        document.getElementById('urlToLogin').remove();
+        const icon = document.createElement('img');
+        icon.src = "src/images/account-icon.png";
+        console.log(username);
+        const tagA = document.createElement('a');
+        tagA.href = "src/pages/account.html";
+        // tagA.classList.add("login");
+        tagA.appendChild(icon);
+
+        div.appendChild(tagA);
+    }
+}
+
 const form = document.getElementById('filtersForm');
 if (form != null){
     form.addEventListener('submit', (event) => {
@@ -94,8 +111,8 @@ if (form != null){
       })
       .then(response => response.json())
       .then(data => {
-        console.log("siuuuu");
-       viewCars(data.ads, true)
+        insertAuth();
+        viewCars(data.ads, true);
       })
       .catch(error => console.error(error));
     });

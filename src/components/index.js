@@ -3,7 +3,6 @@ const api_url =
 
 var listAds = [];
 
-
 document.addEventListener('DOMContentLoaded', function() {
     fetch(api_url)
         .then(response => response.json())
