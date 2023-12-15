@@ -224,7 +224,7 @@ body {
     line-height: 24px;
 }
 
-button[type="link_button"] {
+a[type="link_button"] {
     color: #FFF;
     font-family: Roboto Mono;
     font-size: 20px;
@@ -232,10 +232,14 @@ button[type="link_button"] {
     font-weight: 400;
     line-height: 24px; /* 120% */
     background: #000;
-    width: 391px;
-    height: 52px;
-    margin-top: 118px;
-    margin-left: 121px;
+    width: 320px;
+    height: 50px;
+    position: relative;
+    top: 35px;
+    margin-left: 111px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {

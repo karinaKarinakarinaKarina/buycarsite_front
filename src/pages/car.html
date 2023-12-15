@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuyCar</title>
+    <title id="title">BuyCar</title>
     <link rel="stylesheet" href="../styles/carpage.css">
 </head>
 <body>
+    <script src="../components/car.js" type="module"></script>
     <header>
         <div class="header__line"></div>
             <div class="container">
@@ -32,33 +33,23 @@
     </header>
     <div class="white-block">
         <a href="/index.html" class="return">Вернуться на главную</a>
-        <div class="car_name">Hyundai Santa Fe Classic, 2009</div>
+        <div class="car_name" id="car_name"></div>
         <div class="imgs_desc">
             <div class="car_imgs">
-                <div class="main_img">
-                    <img src="/src/images/image14.png" width="600" height="499">
-                </div>
-                <div class="imgs">
-                    <img src="/src/images/image15.png" width="120" height="90">
-                    <img src="/src/images/image15.png" width="120" height="90">
-                    <img src="/src/images/image15.png" width="120" height="90">
-                    <img src="/src/images/image15.png" width="120" height="90">
-                    <img src="/src/images/image15.png" width="120" height="90">
-                    <a href="#" class="other_imgs">Ещё 10 фото</a>
-                </div>
+                <div class="main_img" id="main_img"></div>
             </div>
             <div class="desc">
-                <div class="price">965 000 ₽</div>
+                <div class="price" id="price"></div>
                 <div class="description">
-                    <div class="characteristics">Бренд: </div>
-                    <div class="characteristics">Модель: </div>
-                    <div class="characteristics">Год выпуска: </div>
-                    <div class="characteristics">Пробег: </div>
-                    <div class="characteristics">Двигатель: </div>
-                    <div class="characteristics">Коробка: </div>
-                    <div class="characteristics">Привод: </div>
+                    <div class="characteristics" id="brand"></div>
+                    <div class="characteristics" id="model"></div>
+                    <div class="characteristics" id="year"></div>
+                    <div class="characteristics" id="km"></div>
+                    <div class="characteristics" id="motor"></div>
+                    <div class="characteristics" id="transmission"></div>
+                    <div class="characteristics" id="wd"></div>
                 </div>
-                <button type="link_button">auto.ru/....</button>
+                <a type="link_button" id="href"></a>
             </div>
         </div>
         <footer>

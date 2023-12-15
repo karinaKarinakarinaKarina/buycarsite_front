@@ -1,23 +1,23 @@
-import { auth, username } from './login.js';
 var listAds = [];
 function viewCars(list, flag){
     var allCars = document.getElementById('allCars');
+    listAds = [];
     if (list.length != 0){
-        const Line1 = document.getElementById('line1'); 
+        const Line1 = document.getElementById('line1');
         var count = 0;
 
         while (document.getElementById("carsInLine1") != null && flag){
             document.getElementById("carsInLine1").remove();
         }
-        
+
         while (document.getElementById("carsInLine2") != null && flag){
             document.getElementById("carsInLine2").remove();
         }
 
         var divLine1 = document.createElement('div');
         divLine1.id = "carsInLine1";
-        divLine1.classList.add("line1"); 
-        
+        divLine1.classList.add("line1");
+
         var Line2 = document.createElement('div');
         Line2.classList.add("line2");
         Line2.id = "carsInLine2";
@@ -37,6 +37,7 @@ function viewCars(list, flag){
             divPrice.textContent = `${item.price} ₽`
             const tagA = document.createElement('a');
             tagA.classList.add("cars1");
+            tagA.href = `http://localhost:8000/src/pages/car.html?id=${item.id}`;
             tagA.appendChild(divName);
             tagA.appendChild(Img);
             tagA.appendChild(divPrice);
@@ -82,22 +83,6 @@ function viewCars(list, flag){
     }
 }
 
-function insertAuth(){
-    var div = document.getElementById('acc');
-    if (auth){
-        document.getElementById('urlToLogin').remove();
-        const icon = document.createElement('img');
-        icon.src = "src/images/account-icon.png";
-        console.log(username);
-        const tagA = document.createElement('a');
-        tagA.href = "src/pages/account.html";
-        // tagA.classList.add("login");
-        tagA.appendChild(icon);
-
-        div.appendChild(tagA);
-    }
-}
-
 const form = document.getElementById('filtersForm');
 if (form != null){
     form.addEventListener('submit', (event) => {
@@ -111,7 +96,6 @@ if (form != null){
       })
       .then(response => response.json())
       .then(data => {
-        insertAuth();
         viewCars(data.ads, true);
       })
       .catch(error => console.error(error));
