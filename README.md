@@ -1,7 +1,7 @@
 # Car-parser-project
 Парсер сайтов с объявлениями о продажах машин.
 
-![ScreenShot](screenshot.jpg)
+![ScreenShot](screenshot.png)
 ## Репозиторий
 В данном репозитории находится фронтенд-состовляющая проекта.
 > Бэкенд часть находиться в [этом](https://github.com/HROMAYAKOZA/Car-parser-project-back) репозитории.
