@@ -445,5 +445,7 @@ footer {
 }
 
 .send-icon {
-    margin-left: -20px;
+    margin-left: -29px;
+    background: none;
+    border: none;
 }

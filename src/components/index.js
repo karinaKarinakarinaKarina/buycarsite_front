@@ -3,7 +3,6 @@ const api_url =
 
 var listAds = [];
 
-
 document.addEventListener('DOMContentLoaded', function() {
     fetch(api_url)
         .then(response => response.json())
@@ -80,6 +79,7 @@ function viewCars(list, flag){
             divPrice.textContent = `${item.price} ₽`
             const tagA = document.createElement('a');
             tagA.classList.add("cars1");
+            tagA.href = `http://localhost:8000/src/pages/car.html?id=${item.id}`;
             tagA.appendChild(divName);
             tagA.appendChild(Img);
             tagA.appendChild(divPrice);

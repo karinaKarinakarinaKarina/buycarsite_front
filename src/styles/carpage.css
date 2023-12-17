@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Flex:opsz@8..144&family=Roboto:wght@400;900&family=Saira&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Flex:opsz@8..144&family=Roboto+Mono&family=Roboto:wght@400;900&family=Saira&display=swap');
+
 
 * {
     margin:0;
@@ -88,7 +89,7 @@ body {
 .white-block {
     background-color: #fff; 
     width: 1440px;
-    height: 780px;
+    height: 940px;
     margin: 0 auto; 
 }
 
@@ -99,7 +100,7 @@ body {
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 21px; /* 116.667% */
+    line-height: 21px; 
     margin-left: 42px;
 }
 
@@ -124,145 +125,136 @@ body {
     height: 1px;
     background: #000;
     transition: width 0.3s ease;
-    display: block; /* Добавлено */
+    display: block; 
 }
 
 .return:hover::after {
     width: 204px;
 }
 
-#loginForm {
-    width: 877px;
-    height: 429px;
-    background-color: #000;
-    margin-top: 118px;
-    margin-left: 281px;
+.car_name {
+    margin-top: 42px;
+    text-align: center;
+    color: #000;
+    font-family: Saira;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; 
 }
 
-#registrationForm {
-    width: 877px;
-    height: 540px;
-    background-color: #000;
-    margin-top: 68px;
-    margin-left: 281px;
-}
-
-.fils {
-    margin-left: 30px;
-}
-
-td {
-    display: block;
-}
-
-.buttons {
+.imgs_desc {
+    margin-top: 4px;
     display: flex;
-    margin-left: 29px;
-    margin-top: 80px;
 }
 
-.login_text {
-    margin-top: 16px;
+.main_img {
+    margin-top: 72px;
+    margin-left: 117px;
+    width: 664px;
+    height: 499px;
+}
+
+.imgs {
+    display: flex;
+    margin-left: 117px;
+}
+
+.other_imgs {
+    margin-left: -120px;
     color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     font-family: Roboto;
-    font-size: 22px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 21px; /* 95.455% */
-}
-
-[name="login"], [name="password"], [name="nickname"], [name="password2"] {
-    margin-top: 21px;
-    width: 796px;
-    height: 41px;
-    background: #FFF;
-}
-
-.password_text {
-    margin-top: 53px;
-    color: #FFF;
-    font-family: Roboto;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px; /* 95.455% */
-}
-
-#sublog {
-    margin-top: -6px;
-    width: 213px;
-    height: 38px;
-    color: #000;
-    font-family: Roboto;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px; /* 95.455% */
-    background: #FFF;
-}
-
-#subreg {
-    margin-top: 38px;
-    width: 234px;
-    height: 38px;
-    color: #000;
-    font-family: Roboto;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px; /* 95.455% */
-    background: #FFF;
-}
-
-#reg {
-    margin-left: 289px;
-    color: #FFF;
-    text-align: right;
-    font-family: Roboto;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px; /* 95.455% */
+    line-height: 24px; 
+    width: 120px;
+    height: 90px;
+    background: rgba(0, 0, 0, 0.6);
     position: relative;
+    overflow: hidden;
 }
 
-#reg::after {
-    content: '';
+.other_imgs::after {
+    content: "";
+    display: block;
+    margin-left: 2px;
+    margin-bottom: 33px;
+    width: 0; 
+    height: 1px; 
+    background-color: #FFF;
     position: absolute;
+    bottom: 0;
     left: 0;
-    bottom: -3px;
-    width: 0;
-    height: 1px;
-    background: #FFF;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease; 
 }
 
-#reg:hover::after {
-    width: 214px;
+.other_imgs:hover::after {
+    width: 97%; 
 }
 
-#footerlog {
+
+.price {
+    margin-top: 90px;
+    margin-left: 226px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 60% */
+}
+
+.description {
+    margin-top: 54px;
+    margin-left: 50px;
+}
+
+.characteristics {
+    margin-top: 26px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+a[type="link_button"] {
+    color: #FFF;
+    font-family: Roboto Mono;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 120% */
+    background: #000;
+    width: 320px;
+    height: 50px;
+    position: relative;
+    top: 35px;
+    margin-left: 111px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
     display: flex;
     align-items: center;
     width: 1440px;
     height: 177px;
     background: #000;
-    margin-top: 167px;
-}
-
-#footerreg {
-    display: flex;
-    align-items: center;
-    width: 1440px;
-    height: 177px;
-    background: #000;
-    margin-top: 86px;
+    margin-top: 132px;
 }
 
 .footer__info {
     margin-left: 54px;
     display: flex;
-    margin-top: 18px;
+    margin-top: 0px;
 }
 
 
@@ -321,8 +313,4 @@ td {
 input, select {
     border: none;
     outline: none;
-}
-
-#error {
-    margin-left: 320px;
 }

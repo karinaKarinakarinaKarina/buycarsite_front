@@ -1,3 +1,5 @@
+export var auth = false;
+export var username;
 const form = document.getElementById('loginForm');
 if (form != null){
     form.addEventListener('submit', (event) => {
@@ -18,7 +20,9 @@ function login(data){
     console.log(data)
     let name = data.username.toString()
     if (name != ''){
-       location.href = 'http://localhost:8000/';
+      auth = true;
+      username = name
+      location.href = 'http://localhost:8000/';
     }
     else{
       while (document.getElementById("errorText") != null){
