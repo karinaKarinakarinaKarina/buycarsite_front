@@ -40,6 +40,7 @@ function InsertOptions(select, item){
 function viewCars(list, flag){
     var allCars = document.getElementById('allCars');
     if (list.length != 0){
+        listAds.length = 0;
         const Line1 = document.getElementById('line1'); 
         var count = 0;
 
@@ -127,7 +128,8 @@ function clickButt(){
         var Line2 = document.createElement('div');
         Line2.classList.add("line2");
         Line2.id = "carsInLine2";
-        listAds.forEach((item, index) => {
+        for (let i = 0; i < listAds.length && count != 3; i++) {
+            const item = listAds[i];
             const divName = document.createElement('div');
             divName.classList.add("cars__name");
             divName.textContent = `${item.brand} ${item.model}, ${item.year}`
@@ -146,21 +148,38 @@ function clickButt(){
             tagA.appendChild(divName);
             tagA.appendChild(Img);
             tagA.appendChild(divPrice);
-
-            var btn = document.getElementById("nextAds");
-                if (count != 3 ){
-                    Line2.appendChild(tagA);
-                }
-                else{
-                    allCars.appendChild(Line2);
-                    Line2 = document.createElement('div');
-                    Line2.classList.add("line2");
-                    Line2.id = "carsInLine2"    
-                    Line2.appendChild(tagA);
-                    count = 0;
-                    btn.remove();
-                }
-                count = count+1;
-        });
+            Line2.appendChild(tagA);
+            listAds.splice(i, 1);
+            i--;
+            count++;
+        }
+        if (count != 3){
+            document.getElementById('nextAds').remove();
+        }
+        allCars.appendChild(Line2);   
     }
+}
+let button = document.getElementById('nextAds');
+
+button.addEventListener('click', function() {
+  clickButt();
+});
+
+const form = document.getElementById('filtersForm');
+if (form != null){
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch("http://localhost:5000/", {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        viewCars(data.ads, true);
+      })
+      .catch(error => console.error(error));
+    });
 }
