@@ -67,18 +67,15 @@
                         </div>
                         <div class="filter">
                             <div class="choose">Год выпуска:</div>
-                            <select id="year" name="year" class="filt" autocomplete="off">
-                                    <option value="year">
-                                        year
-                                    </option>
-                            </select>
+                            <input class="in_year" type="number" name="year">
                         </div>
                         <div class="filter">
                             <div class="choose">Цена:</div>
                             <div class="price_from">от</div>
-                            <input type="number" name="price_from">
+                            <input class="in_price" type="number" name="price_from">
                             <div class="price_to">до</div>
-                            <input type="number" name="price_to">
+
+                            <input class="in_price" type="number" name="price_to">
                         </div>
                         <div class="filter">
                             <div class="choose">Тип коробки:</div>
@@ -95,7 +92,7 @@
             </div>
 
         </div>
-        <button class="custom-button" id="nextAds" onclick="viewCars(listAds, false)">Показать следующие объявления</button>
+        <button class="custom-button" id="nextAds" onclick="clickButt()">Показать следующие объявления</button>
         <footer>
             <div class="footer__info">
                 <div class="company">

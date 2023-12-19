@@ -1,7 +1,7 @@
 var listAds = [];
 function viewCars(list, flag){
     var allCars = document.getElementById('allCars');
-    listAds = [];
+    listAds.length = 0;
     if (list.length != 0){
         const Line1 = document.getElementById('line1');
         var count = 0;
@@ -76,10 +76,53 @@ function viewCars(list, flag){
 
             }
         });
-        
         if (flag){
             Line1.appendChild(divLine1);
         }
+    }
+}
+
+function clickButt(){
+    console.log("work postindex.js");
+    var allCars = document.getElementById('allCars');
+    if (listAds.length != 0){
+        var Line2 = document.createElement('div');
+        Line2.classList.add("line2");
+        Line2.id = "carsInLine2";
+        listAds.forEach((item, index) => {
+            const divName = document.createElement('div');
+            divName.classList.add("cars__name");
+            divName.textContent = `${item.brand} ${item.model}, ${item.year}`
+            const Img = document.createElement('img');
+            Img.classList.add("cars__img");
+            Img.alt = "Image";
+            Img.src = `${item.image}`;
+            Img.width = "381";
+            Img.height = "285";
+            const divPrice = document.createElement('div');
+            divPrice.classList.add("cars__price");
+            divPrice.textContent = `${item.price} ₽`
+            const tagA = document.createElement('a');
+            tagA.classList.add("cars1");
+            tagA.href = `http://localhost:8000/src/pages/car.html?id=${item.id}`;
+            tagA.appendChild(divName);
+            tagA.appendChild(Img);
+            tagA.appendChild(divPrice);
+
+            var btn = document.getElementById("nextAds");
+            if (index == 2 ){
+                Line2.appendChild(tagA);
+                return;
+            }
+            else{
+                allCars.appendChild(Line2);
+                Line2 = document.createElement('div');
+                Line2.classList.add("line2");
+                Line2.id = "carsInLine2"    
+                Line2.appendChild(tagA);
+                btn.remove();
+            }
+        });
     }
 }
 

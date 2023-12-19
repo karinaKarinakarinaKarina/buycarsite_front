@@ -242,13 +242,6 @@ form {
     background: #D9D9D9;
 }
 
-[name="year"].filt {
-    width: 261px;
-    height: 24px;
-    margin-left: 48px;
-    background: #D9D9D9;
-}
-
 .price_from {
     color: #000;
     font-family: Roboto;
@@ -259,7 +252,14 @@ form {
     margin-left: 120px;
 }
 
-input[type="number"] {
+.in_year {
+    width: 261px;
+    height: 24px;
+    margin-left: 50px;
+    background: #D9D9D9;
+}
+
+.in_price {
     width: 96px;
     height: 24px;
     background: #D9D9D9;

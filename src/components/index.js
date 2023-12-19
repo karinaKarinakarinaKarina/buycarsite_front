@@ -19,10 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
             selectModel.innerHTML = '';
             data.models.forEach(item => InsertOptions(selectModel, item));
 
-            const selectYear = document.getElementById('year');
-            selectYear.innerHTML = '';
-            data.years.forEach(item => InsertOptions(selectYear, item));
-
             const selectTransmissions = document.getElementById('trans');
             selectTransmissions.innerHTML = '';
             data.transmissions.forEach(item => InsertOptions(selectTransmissions, item));
@@ -43,7 +39,6 @@ function InsertOptions(select, item){
 
 function viewCars(list, flag){
     var allCars = document.getElementById('allCars');
-    listAds = [];
     if (list.length != 0){
         const Line1 = document.getElementById('line1'); 
         var count = 0;
@@ -115,12 +110,57 @@ function viewCars(list, flag){
                     btn.remove();
                 }
                 count = count+1;
-
             }
         });
         
         if (flag){
             Line1.appendChild(divLine1);
         }
+    }
+}
+
+function clickButt(){
+    console.log("work index.js");
+    var allCars = document.getElementById('allCars');
+    if (listAds.length != 0){
+        var count = 0;
+        var Line2 = document.createElement('div');
+        Line2.classList.add("line2");
+        Line2.id = "carsInLine2";
+        listAds.forEach((item, index) => {
+            const divName = document.createElement('div');
+            divName.classList.add("cars__name");
+            divName.textContent = `${item.brand} ${item.model}, ${item.year}`
+            const Img = document.createElement('img');
+            Img.classList.add("cars__img");
+            Img.alt = "Image";
+            Img.src = `${item.image}`;
+            Img.width = "381";
+            Img.height = "285";
+            const divPrice = document.createElement('div');
+            divPrice.classList.add("cars__price");
+            divPrice.textContent = `${item.price} ₽`
+            const tagA = document.createElement('a');
+            tagA.classList.add("cars1");
+            tagA.href = `http://localhost:8000/src/pages/car.html?id=${item.id}`;
+            tagA.appendChild(divName);
+            tagA.appendChild(Img);
+            tagA.appendChild(divPrice);
+
+            var btn = document.getElementById("nextAds");
+                if (count != 3 ){
+                    Line2.appendChild(tagA);
+                }
+                else{
+                    allCars.appendChild(Line2);
+                    Line2 = document.createElement('div');
+                    Line2.classList.add("line2");
+                    Line2.id = "carsInLine2"    
+                    Line2.appendChild(tagA);
+                    count = 0;
+                    btn.remove();
+                }
+                count = count+1;
+        });
     }
 }
