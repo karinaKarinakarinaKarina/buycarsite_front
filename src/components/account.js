@@ -1,8 +1,7 @@
-var id = url.searchParams.get("id");
-if (id != null){
-  var urlString = window.location.href;
-  var url = new URL(urlString);
-  const api_url = `http://localhost:5000/account/${id}`;
+var UserID = sessionStorage.getItem('id');
+
+if (UserID != null){
+  const api_url = `http://localhost:5000/account/${UserID}`;
 
   document.addEventListener('DOMContentLoaded', function() {
       fetch(api_url)
@@ -10,6 +9,14 @@ if (id != null){
           .then(data => {
               let tagA = document.getElementById("data");
               tagA.textContent = `Здравтсвуйте, господин ${data.nickname}`;
+
+              let divFavorites = document.getElementById("favorites");
+              data.favorites.forEach((item, index) => {
+                tagA = document.createElement("a");
+                tagA.textContent = `${index+1}. ${item.brand} ${item.model}, ${item.year} (${item.href})`;
+                divFavorites.appendChild(tagA);
+                divFavorites.appendChild(document.createElement("br"));
+              });
           })
           .catch(error => {
               console.error('Error fetching list:', error);

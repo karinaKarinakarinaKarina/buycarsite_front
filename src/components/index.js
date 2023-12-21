@@ -1,17 +1,20 @@
-const id = sessionStorage.getItem('id');
+const UserID = sessionStorage.getItem('id');
 
-let divAcc = document.getElementById("account");
-let aAcc = document.createElement('a');
-if (id != null){
-    aAcc.href = `http://localhost:8000/src/pages/account.html?id=${id}`;
-    aAcc.classList.add("account-icon");
-    let imgAcc = document.createElement('img');
-    imgAcc.src = "src/images/account-icon.png";
-    imgAcc.alt = `Перейти на страницу ${nickname}`;
-    console.log("Registered");
-    aAcc.appendChild(imgAcc);
+function registered(){
+    return UserID != null;
 }
-else{
+
+let divAcc = document.getElementById("account"); // <div> - берётся из html
+let aAcc = document.createElement('a'); // <a></a> - создается 
+
+if (registered()){
+    aAcc.href = `http://localhost:8000/src/pages/account.html?id=${UserID}`;
+    aAcc.classList.add("account-icon");
+    let imgAcc = document.createElement('img'); // создается <img> 
+    imgAcc.src = "src/images/account-icon.png"; // путь src
+    console.log("Registered");
+    aAcc.appendChild(imgAcc); // <a> <img> </a> - тег иконки в тег а вставляется
+} else{
     aAcc.classList.add("login");
     aAcc.href = "src/pages/login.html";
     aAcc.id = "urlToLogin";
@@ -20,8 +23,7 @@ else{
 }
 divAcc.appendChild(aAcc);
 
-const api_url =
-      "http://localhost:5000/"
+const api_url = "http://localhost:5000/";
 
 var listAds = [];
 
@@ -58,7 +60,19 @@ function InsertOptions(select, item){
     option.textContent = item;
     select.appendChild(option);
 }
-
+function setAdToUser(user_id, ad_id){
+    const urlForSet = `http://localhost:5000/setAdInUser/${user_id}/${ad_id}`;
+    fetch(urlForSet)
+        .then(response => response.json())
+        .then(data => {
+            if (data.result == "Successfully"){
+                console.log("Adding ad.id=" + ad_id + " to user.id=" + user_id + " was successful");
+            }
+        })
+        .catch(error => {
+            console.error('Error the Ad could not be added to favorites: ', error);
+        });
+}
 function viewCars(list, flag){
     var allCars = document.getElementById('allCars');
     if (list.length != 0){
@@ -95,16 +109,29 @@ function viewCars(list, flag){
             const divPrice = document.createElement('div');
             divPrice.classList.add("cars__price");
             divPrice.textContent = `${item.price} ₽`
-            const tagA = document.createElement('a');
-            tagA.classList.add("cars1");
-            tagA.href = `http://localhost:8000/src/pages/car.html?id=${item.id}`;
-            tagA.appendChild(divName);
-            tagA.appendChild(Img);
-            tagA.appendChild(divPrice);
+            if (registered()){
+                const buttAd = document.createElement('button');
+                buttAd.classList.add(".buttonOfAd");
+                buttAd.textContent = "Добавить в избранное";
+                buttAd.setAttribute('data-value', item.id);
+                buttAd.addEventListener('click', function() {
+                    var ad_id = this.getAttribute('data-value');
+                    setAdToUser(UserID, ad_id);
+                });
+                divPrice.appendChild(buttAd);
+            }
+            const a1 = document.createElement('a');
+            const a2 = document.createElement('a');
+            a2.href = `http://localhost:8000/src/pages/car.html?id=${item.id}`;
+            a2.appendChild(Img);
+            a1.classList.add("cars1");
+            a1.appendChild(divName);
+            a1.appendChild(a2);
+            a1.appendChild(divPrice);
             if (flag){
                 if (index >= 2 && index < 6) {
                     if(count!=3){
-                        Line2.appendChild(tagA);
+                        Line2.appendChild(a1);
                     }
                     else{
                         allCars.appendChild(Line2);
@@ -112,7 +139,7 @@ function viewCars(list, flag){
                     count = count + 1;
                 }
                 else if (index <= 1){
-                    divLine1.appendChild(tagA);
+                    divLine1.appendChild(a1);
                 }
                 else{
                     listAds.push(item);
@@ -121,14 +148,14 @@ function viewCars(list, flag){
             else {
                 var btn = document.getElementById("nextAds");
                 if (count != 3 ){
-                    Line2.appendChild(tagA);
+                    Line2.appendChild(a1);
                 }
                 else{
                     allCars.appendChild(Line2);
                     Line2 = document.createElement('div');
                     Line2.classList.add("line2");
-                    Line2.id = "carsInLine2"    
-                    Line2.appendChild(tagA);
+                    Line2.id = "carsInLine2";
+                    Line2.appendChild(a1);
                     count = 0;
                     btn.remove();
                 }
@@ -142,8 +169,7 @@ function viewCars(list, flag){
     }
 }
 
-function clickButt(){
-    console.log("work index.js");
+function clickButtNextAds(){
     var allCars = document.getElementById('allCars');
     if (listAds.length != 0){
         var count = 0;
@@ -163,14 +189,27 @@ function clickButt(){
             Img.height = "285";
             const divPrice = document.createElement('div');
             divPrice.classList.add("cars__price");
-            divPrice.textContent = `${item.price} ₽`
-            const tagA = document.createElement('a');
-            tagA.classList.add("cars1");
-            tagA.href = `http://localhost:8000/src/pages/car.html?id=${item.id}`;
-            tagA.appendChild(divName);
-            tagA.appendChild(Img);
-            tagA.appendChild(divPrice);
-            Line2.appendChild(tagA);
+            divPrice.textContent = `${item.price} ₽`;
+            if (registered()){
+                const buttAd = document.createElement('button');
+                buttAd.classList.add(".buttonOfAd");
+                buttAd.textContent = "Добавить в избранное";
+                buttAd.setAttribute('data-value', item.id);
+                buttAd.addEventListener('click', function() {
+                    var ad_id = this.getAttribute('data-value');
+                    setAdToUser(UserID, ad_id);
+                });
+                divPrice.appendChild(buttAd);
+            }
+            const a1 = document.createElement('a');
+            const a2 = document.createElement('a');
+            a2.href = `http://localhost:8000/src/pages/car.html?id=${item.id}`;
+            a2.appendChild(Img);
+            a1.classList.add("cars1");
+            a1.appendChild(divName);
+            a1.appendChild(a2);
+            a1.appendChild(divPrice);
+            Line2.appendChild(a1);
             listAds.splice(i, 1);
             i--;
             count++;
@@ -181,10 +220,10 @@ function clickButt(){
         allCars.appendChild(Line2);   
     }
 }
-let button = document.getElementById('nextAds');
 
+let button = document.getElementById('nextAds');
 button.addEventListener('click', function() {
-  clickButt();
+  clickButtNextAds();
 });
 
 const form = document.getElementById('filtersForm');

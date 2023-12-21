@@ -16,7 +16,7 @@ if (form != null){
     });
 }
 function registration(data){
-    let name = data.nickname.toString();
+    let name = data.nickname;
     if (name != ''){
        location.href = 'http://localhost:8000/src/pages/login.html';
     }
