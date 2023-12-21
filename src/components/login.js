@@ -1,5 +1,3 @@
-export var auth = false;
-export var username;
 const form = document.getElementById('loginForm');
 if (form != null){
     form.addEventListener('submit', (event) => {
@@ -18,10 +16,12 @@ if (form != null){
 }
 function login(data){
     console.log(data)
-    let name = data.username.toString()
-    if (name != ''){
-      auth = true;
-      username = name
+    let name = data.nickname.toString();
+    let login = data.login.toString();
+    if (name != '' && login != ''){
+      sessionStorage.setItem('login', login);
+      sessionStorage.setItem('nickname', name);
+      sessionStorage.setItem('id', data.id);
       location.href = 'http://localhost:8000/';
     }
     else{

@@ -1,3 +1,28 @@
+var nickname = sessionStorage.getItem('nickname');
+var login = sessionStorage.getItem('login');
+var id = sessionStorage.getItem('id');
+console.log(nickname);
+console.log(login);
+let divAcc = document.getElementById("account");
+let aAcc = document.createElement('a');
+if (nickname != null && login != null){
+    aAcc.href = `http://localhost:8000/src/pages/account.html?id=${id}`;
+    aAcc.classList.add("account-icon");
+    let imgAcc = document.createElement('img');
+    imgAcc.src = "src/images/account-icon.png";
+    imgAcc.alt = `Перейти на страницу ${nickname}`;
+    console.log("Registered")
+    aAcc.appendChild(imgAcc);
+}
+else{
+    aAcc.classList.add("login");
+    aAcc.href = "src/pages/login.html";
+    aAcc.id = id="urlToLogin";
+    aAcc.textContent = "Войти";
+    console.log("Not registered");
+}
+divAcc.appendChild(aAcc);
+
 const api_url =
       "http://localhost:5000/"
 
