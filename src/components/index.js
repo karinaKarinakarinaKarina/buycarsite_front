@@ -1,23 +1,20 @@
-var nickname = sessionStorage.getItem('nickname');
-var login = sessionStorage.getItem('login');
-var id = sessionStorage.getItem('id');
-console.log(nickname);
-console.log(login);
+const id = sessionStorage.getItem('id');
+
 let divAcc = document.getElementById("account");
 let aAcc = document.createElement('a');
-if (nickname != null && login != null){
+if (id != null){
     aAcc.href = `http://localhost:8000/src/pages/account.html?id=${id}`;
     aAcc.classList.add("account-icon");
     let imgAcc = document.createElement('img');
     imgAcc.src = "src/images/account-icon.png";
     imgAcc.alt = `Перейти на страницу ${nickname}`;
-    console.log("Registered")
+    console.log("Registered");
     aAcc.appendChild(imgAcc);
 }
 else{
     aAcc.classList.add("login");
     aAcc.href = "src/pages/login.html";
-    aAcc.id = id="urlToLogin";
+    aAcc.id = "urlToLogin";
     aAcc.textContent = "Войти";
     console.log("Not registered");
 }

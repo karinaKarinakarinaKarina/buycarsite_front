@@ -15,12 +15,7 @@ if (form != null){
     });
 }
 function login(data){
-    console.log(data)
-    let name = data.nickname.toString();
-    let login = data.login.toString();
-    if (name != '' && login != ''){
-      sessionStorage.setItem('login', login);
-      sessionStorage.setItem('nickname', name);
+    if (data.id != null){
       sessionStorage.setItem('id', data.id);
       location.href = 'http://localhost:8000/';
     }

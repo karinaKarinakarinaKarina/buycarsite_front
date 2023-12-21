@@ -1,10 +1,7 @@
-var nickname = sessionStorage.getItem('nickname');
-var login = sessionStorage.getItem('login');
-
-if (nickname != null && login != null){
+var id = url.searchParams.get("id");
+if (id != null){
   var urlString = window.location.href;
   var url = new URL(urlString);
-  var id = url.searchParams.get("id");
   const api_url = `http://localhost:5000/account/${id}`;
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -12,7 +9,7 @@ if (nickname != null && login != null){
           .then(response => response.json())
           .then(data => {
               let tagA = document.getElementById("data");
-              tagA.textContent = `Здравтсвуйте, господин ${data.username}`;
+              tagA.textContent = `Здравтсвуйте, господин ${data.nickname}`;
           })
           .catch(error => {
               console.error('Error fetching list:', error);
