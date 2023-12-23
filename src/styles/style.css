@@ -336,6 +336,8 @@ input, select {
 }
 
 .cars {
+    display: flex;
+    justify-content: center;
     margin-top: 69px;
     margin-left: 32px;
     width: 445px;
@@ -351,7 +353,6 @@ input, select {
     font-style: normal;
     font-weight: 900;
     line-height: 22px;
-    margin-left: 144px;
     margin-top: 26px;
 }
 
