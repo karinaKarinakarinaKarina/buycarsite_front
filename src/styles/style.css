@@ -73,14 +73,14 @@ a.search-icon {
 }
 
 .account-icon {
-    width: 39px;
-    height: 35px;
     margin-left: 49px;
     position: relative;
     top: 6px;
 }
 
 .account-icon img {
+    width: 48px;
+    height: 43px;
     background-color: white;
 }
 
