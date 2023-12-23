@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
-    <script src="src/components/index.js"></script>
-    <script src="src/components/postIndex.js" type="module"></script>
+    <script src="src/components/index.js" type="module"></script>
     <header>
         <div class="header__line"></div>
             <div class="container">
@@ -24,11 +23,7 @@
                             </a>
                         </form>
                     </div>
-                    <div class="acc" id="acc">
-                        <a class="login" href="src/pages/login.html" id="urlToLogin">
-                            Войти
-                        </a>
-                    </div>
+                    <div class="acc" id="account"></div>
                 </div>
             </div>
     </header>
@@ -81,7 +76,7 @@
                             <div class="choose">Тип коробки:</div>
                             <select id="trans" name="transmission" class="filt" autocomplete="off">
                                     <option value="tr">
-                                        tr
+                                        transmission
                                     </option>
                             </select>
                         </div>
@@ -90,9 +85,11 @@
                 </form>
                 <div id="carsInLine1"></div>
             </div>
-
         </div>
-        <button class="custom-button" id="nextAds" onclick="clickButt()">Показать следующие объявления</button>
+        <div class="filters_cars">
+            <button class="custom-button" id="nextAds">Показать следующие объявления</button>
+        </div>
+        <br>
         <footer>
             <div class="footer__info">
                 <div class="company">

@@ -80,17 +80,25 @@ a.search-icon {
     top: 6px;
 }
 
+.account-icon img {
+    background-color: white;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #000; /* Чёрный фон для всего сайта */
 }
 
+.filters_cars {
+    background-color: #fff;
+}
 .white-block {
     background-color: #fff; /* Белый фон для блока */
     width: 1440px;
-    height: 2010px;
+    height: auto;
     margin: 0 auto; /* Центрирование блока по горизонтали */
+    margin-top: auto;
 }
 
 .main__text {
@@ -390,6 +398,7 @@ footer {
     width: 1440px;
     height: 177px;
     background: #000;
+    margin-top: auto;
 }
 
 .footer__info {
