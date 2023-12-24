@@ -346,16 +346,6 @@ input, select {
     background-color: #000;
 }
 
-.cars__name {
-    color: #FFF;
-    font-family: Roboto;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 22px;
-    margin-top: 26px;
-}
-
 .cars__img {
     margin-top: 26px;
     margin-left: 33px;
