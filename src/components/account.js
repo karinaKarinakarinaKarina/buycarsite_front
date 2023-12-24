@@ -1,7 +1,7 @@
 var UserID = sessionStorage.getItem('id');
 
 if (UserID != null){
-  const api_url = `http://localhost:5000/account/${UserID}`;
+  const api_url = `http://{{SERV_IP}}:5000/account/${UserID}`;
 
   document.addEventListener('DOMContentLoaded', function() {
       fetch(api_url)
@@ -24,5 +24,5 @@ if (UserID != null){
   });
 }
 else{
-  location.href = 'http://localhost:8000/src/pages/login.html';
+  location.href = 'http://{{SERV_IP}}:3000/src/pages/login.html';
 }

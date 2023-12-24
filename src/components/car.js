@@ -4,7 +4,7 @@ var url = new URL(urlString);
 
 var id = url.searchParams.get("id");
 
-const api_url = `http://localhost:5000/advertisement/${id}`;
+const api_url = `http://{{SERV_IP}}:5000/advertisement/${id}`;
 
 document.addEventListener('DOMContentLoaded', function() {
     fetch(api_url)

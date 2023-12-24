@@ -6,7 +6,7 @@ if (form != null){
 
       const formData = new FormData(form);
 
-      fetch('http://localhost:5000/registration', {
+      fetch('http://{{SERV_IP}}:5000/registration', {
         method: 'POST',
         body: formData
       })
@@ -18,7 +18,7 @@ if (form != null){
 function registration(data){
     let name = data.nickname;
     if (name != ''){
-       location.href = 'http://localhost:8000/src/pages/login.html';
+       location.href = 'http://{{SERV_IP}}:3000/src/pages/login.html';
     }
     else{
        while (document.getElementById("errorText") != null){

@@ -8,7 +8,7 @@ let divAcc = document.getElementById("account"); // <div> - берётся из 
 let aAcc = document.createElement('a'); // <a></a> - создается 
 
 if (registered()){
-    aAcc.href = `http://localhost:8000/src/pages/account.html?id=${UserID}`;
+    aAcc.href = `http://{{SERV_IP}}:3000/src/pages/account.html?id=${UserID}`;
     aAcc.classList.add("account-icon");
     let imgAcc = document.createElement('img'); // создается <img> 
     imgAcc.src = "src/images/account-icon.png"; // путь src
@@ -23,7 +23,10 @@ if (registered()){
 }
 divAcc.appendChild(aAcc);
 
-const api_url = "http://localhost:5000/";
+// require('dotenv').config(); // Загрузка переменных окружения из .env файла
+// const BACK_IP = process.env.BACK_IP
+// const hwdicd = require('../../server.js');
+const api_url = `http://{{SERV_IP}}:5000/`;
 
 var listAds = [];
 
@@ -61,7 +64,7 @@ function InsertOptions(select, item){
     select.appendChild(option);
 }
 function setAdToUser(user_id, ad_id){
-    const urlForSet = `http://localhost:5000/setAdInUser/${user_id}/${ad_id}`;
+    const urlForSet = `http://{{SERV_IP}}:5000/setAdInUser/${user_id}/${ad_id}`;
     fetch(urlForSet)
         .then(response => response.json())
         .then(data => {
@@ -122,7 +125,7 @@ function viewCars(list, flag){
             }
             const a1 = document.createElement('a');
             const a2 = document.createElement('a');
-            a2.href = `http://localhost:8000/src/pages/car.html?id=${item.id}`;
+            a2.href = `http://{{SERV_IP}}:3000/src/pages/car.html?id=${item.id}`;
             a2.appendChild(Img);
             a1.classList.add("cars1");
             a1.appendChild(divName);
@@ -203,7 +206,7 @@ function clickButtNextAds(){
             }
             const a1 = document.createElement('a');
             const a2 = document.createElement('a');
-            a2.href = `http://localhost:8000/src/pages/car.html?id=${item.id}`;
+            a2.href = `http://{{SERV_IP}}:3000/src/pages/car.html?id=${item.id}`;
             a2.appendChild(Img);
             a1.classList.add("cars1");
             a1.appendChild(divName);

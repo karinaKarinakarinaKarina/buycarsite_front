@@ -5,7 +5,7 @@ if (form != null){
 
       const formData = new FormData(form);
 
-      fetch('http://localhost:5000/login', {
+      fetch('http://{{SERV_IP}}:5000/login', {
         method: 'POST',
         body: formData
       })
@@ -17,7 +17,7 @@ if (form != null){
 function login(data){
     if (data.id != null){
       sessionStorage.setItem('id', data.id);
-      location.href = 'http://localhost:8000/';
+      location.href = 'http://{{SERV_IP}}:3000/';
     }
     else{
       while (document.getElementById("errorText") != null){
