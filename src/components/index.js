@@ -15,7 +15,7 @@ if (registered()){
     imgAcc.src = "src/images/account-icon.png";
     console.log("Registered");
     aAcc.appendChild(imgAcc);
-    fetch(`http://localhost:5000/selectFavoriteAds/${UserID}`)
+    fetch(`http://{{SERV_IP}}:5000/selectFavoriteAds/${UserID}`)
         .then(response => response.json())
         .then(data => {
             data.favoriteAds.forEach((item) => {listFavoriteAds.push(item)});
@@ -88,7 +88,7 @@ function setAdToUser(user_id, ad_id){
 }
 
 function deleteAdOfUser(user_id, ad_id){
-    const urlForDelete = `http://localhost:5000/deleteAdOfUser/${user_id}/${ad_id}`;
+    const urlForDelete = `http://{{SERV_IP}}:5000/deleteAdOfUser/${user_id}/${ad_id}`;
     fetch(urlForDelete)
         .then(response => response.json())
         .then(data => {
@@ -307,7 +307,7 @@ if (form != null){
 
       const formData = new FormData(form);
 
-      fetch("http://localhost:5000/", {
+      fetch("http://{{SERV_IP}}:5000/", {
         method: 'POST',
         body: formData
       })

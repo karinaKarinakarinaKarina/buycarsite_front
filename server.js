@@ -4,15 +4,38 @@ const path = require('path');
 require('dotenv').config(); // Загрузка переменных окружения из .env файла
 
 const PORT = process.env.PORT || 3000;
-const BACK_IP = process.env.BACK_IP;
+const SERV_IP = process.env.SERV_IP;
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+app.get('/favicon.ico', (req, res) => {
+  res.sendFile(path.join(__dirname, 'favicon.ico'));
+});
+
+app.use((req, res, next) => {
+  const requestedPath = req.path;
+
+  // Проверяем, начинается ли путь с /src/
+  if (requestedPath.startsWith('/src/')) {
+    // Продолжаем обработку запроса
+    next();
+  } else {
+    // Отправляем 404, если путь не соответствует условию
+    res.status(404).send('Not Found');
+  }
+});
+
+
 
 // Маршрут для отдачи клиентского JavaScript файла
-app.get('/src/components/index.js', (req, res) => {
+app.get('/src/components/:filename', (req, res) => {
   // Чтение содержимого файла и подстановка переменных
-  console.log("AAAAAA")
+  console.log("js-replacement")
+  const filename = req.params.filename;
   const fs = require('fs');
   // const path = require('path');
-  const filePath = path.join(__dirname, 'src', 'components', 'index.js');
+  const filePath = path.join(__dirname, 'src', 'components', filename);
 
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
@@ -22,7 +45,7 @@ app.get('/src/components/index.js', (req, res) => {
     }
 
     // Подстановка переменных
-    const modifiedData = data.replace(/{{BACK_IP}}/g, BACK_IP);
+    const modifiedData = data.replace(/{{SERV_IP}}/g, SERV_IP);
     // console.log('Modified JavaScript file:', modifiedData);
 
     // Отправка модифицированного JavaScript файла
@@ -35,14 +58,7 @@ app.get('/src/components/index.js', (req, res) => {
 app.use(express.static(path.join(__dirname)));
 // app.use(express.static(path.join(__dirname, 'src', 'components')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-
-
-
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT} and ${BACK_IP}`);
+  console.log(`Server is running on http://localhost:${PORT} and ${SERV_IP}`);
 });
