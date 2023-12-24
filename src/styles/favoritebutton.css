@@ -1,0 +1,61 @@
+.favorite-button {
+    margin-left: 360px;
+    margin-top: 18px;
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    width: 39px; /* Ширина и высота соответствуют viewBox SVG */
+    height: 39px; /* Скрываем содержимое, выходящее за границы кнопки */
+    position: absolute; 
+}
+
+.star {
+    color: #999; /* Серый цвет для звезды по умолчанию */
+    transition: color 0.3s ease-in-out; /* Добавляем плавное изменение цвета */
+}
+
+.favorite-button:hover .star {
+    color: #FFD700; /* Золотой цвет для звезды при наведении */
+    filter: drop-shadow(0 0 5px #FFD700); /* Добавляем тень при наведении */
+}
+
+.favorite-button.favorite .star {
+    color: #FFD700;
+    filter: drop-shadow(0 0 5px #FFD700);
+}
+
+.line1 {
+    display: flex;
+}
+
+.cars {
+    display: flex;
+    justify-content: center; /* Располагаем по центру по оси X */
+    margin-top: 69px;
+    margin-left: 32px;
+    width: 445px;
+    height: 416px;
+    flex-shrink: 0;
+    background-color: #000;
+    position: relative;
+}
+
+.cars__name {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 22px;
+    margin-top: 26px;
+    margin-left: 130px
+}
+
+.cars__img {
+    margin-top: 26px;
+    margin-left: 33px;
+}
+  
