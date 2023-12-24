@@ -1,13 +1,7 @@
-let clicked = false;
+const favoriteButtons = document.querySelectorAll('.favorite-button');
 
-document.getElementById('favoriteButton').addEventListener('click', function() {
-    const button = document.getElementById('favoriteButton');
-    
-    if (!clicked) {
-        button.classList.add('favorite');
-        clicked = true;
-    } else {
-        button.classList.remove('favorite');
-        clicked = false;
-    }
+favoriteButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        button.classList.toggle('favorite');
+    });
 });
