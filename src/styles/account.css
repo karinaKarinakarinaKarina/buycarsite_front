@@ -227,8 +227,12 @@ a[type="link_button"] {
     margin-left: 30px;
 }
 
-.log, .currentpassword, .newpassword, .confirmpassword {
+.name, .log, .currentpassword, .newpassword, .confirmpassword {
     display: flex;
+}
+
+[name="name"] {
+    margin-left: 208px;
 }
 
 [name="login"] {
