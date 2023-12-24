@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../styles/account.css">
 </head>
 <body>
-    <!-- <script src="../components/account.js" type="module"></script> -->
+     <script src="../components/account.js" type="module"></script>
     <a id="data"></a>
     <div id="favorites"></div>
     <header>
@@ -24,27 +24,22 @@
                             </a>
                         </form>
                     </div>
-                    <div class="acc">
-                        <a class="login" href="#">
-                            Войти
-                        </a>
-                    </div>
                 </div>
             </div>
     </header>
     <div class="white-block">
         <a href="/index.html" class="return">Вернуться на главную</a>
         <div class="avatar_buttons">
-            <div class="avatar">
+            <div class="avatar" id="avatar">
                 <div class="grayblock">
                     <img class="avatar_img" src="../images/image30.png">
                 </div>
-                <span class="name">Кирилл Прикольный</span>
+                <span class="name" id="user_name"></span>
             </div>
             <div class="buttons">
                 <a type="link_button" href="#">Посмотреть избранные объявления</a>
                 <a type="link_button" href="/src/pages/accountedit.html">Изменить настройки</a>
-                <a type="link_button" href="#">Выйти из акканута</a>
+                <button class="logout-button" id="logout_button">Выйти из акканута</button>
             </div>
         </div>
         <footer id="footeracc">

@@ -346,3 +346,21 @@ input, select {
     border: none;
     outline: none;
 }
+
+.logout-button {
+    color: #FFF;
+    font-family: 'Saira', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: #000;
+    width: 463px;
+    height: 46px;
+    position: relative;
+    margin-top: 54.8px;
+    margin-left: 111px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

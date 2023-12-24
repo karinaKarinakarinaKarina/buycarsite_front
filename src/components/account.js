@@ -7,20 +7,25 @@ if (UserID != null){
       fetch(api_url)
           .then(response => response.json())
           .then(data => {
-              let tagA = document.getElementById("data");
-              tagA.textContent = `Здравтсвуйте, господин ${data.nickname}`;
+              let spanName = document.getElementById("user_name");
+              spanName.textContent = `${data.nickname}`;
 
-              let divFavorites = document.getElementById("favorites");
-              data.favorites.forEach((item, index) => {
-                tagA = document.createElement("a");
-                tagA.textContent = `${index+1}. ${item.brand} ${item.model}, ${item.year} (${item.href})`;
-                divFavorites.appendChild(tagA);
-                divFavorites.appendChild(document.createElement("br"));
-              });
+              // let divFavorites = document.getElementById("favorites");
+              // data.favorites.forEach((item, index) => {
+              //   tagA = document.createElement("a");
+              //   tagA.textContent = `${index+1}. ${item.brand} ${item.model}, ${item.year} (${item.href})`;
+              //   divFavorites.appendChild(tagA);
+              //   divFavorites.appendChild(document.createElement("br"));
+              // });
           })
           .catch(error => {
               console.error('Error fetching list:', error);
           });
+      const buttonLogout = document.getElementById("logout_button");
+      buttonLogout.addEventListener('click', function() {
+        sessionStorage.removeItem('id');
+        location.href = 'http://localhost:8000/index.html';
+      });
   });
 }
 else{
