@@ -1,9 +1,13 @@
-FROM python:3.11.6
+FROM node:14
 
 WORKDIR /app
 
 COPY . /app
 
-EXPOSE 8000
+RUN npm install
 
-CMD [ "python", "-m", "http.server", "8000" ]
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "server.js"]

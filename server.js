@@ -15,22 +15,16 @@ app.get('/favicon.ico', (req, res) => {
 
 app.use((req, res, next) => {
   const requestedPath = req.path;
-
-  // Проверяем, начинается ли путь с /src/
   if (requestedPath.startsWith('/src/')) {
-    // Продолжаем обработку запроса
     next();
   } else {
-    // Отправляем 404, если путь не соответствует условию
+    // Отправляем 404, если путь не к src
     res.status(404).send('Not Found');
   }
 });
 
-
-
-// Маршрут для отдачи клиентского JavaScript файла
+// Обработка js-файлов
 app.get('/src/components/:filename', (req, res) => {
-  // Чтение содержимого файла и подстановка переменных
   console.log("js-replacement")
   const filename = req.params.filename;
   const fs = require('fs');
@@ -43,22 +37,16 @@ app.get('/src/components/:filename', (req, res) => {
       res.status(500).send('Internal Server Error');
       return;
     }
-
     // Подстановка переменных
     const modifiedData = data.replace(/{{SERV_IP}}/g, SERV_IP);
-    // console.log('Modified JavaScript file:', modifiedData);
-
-    // Отправка модифицированного JavaScript файла
     res.type('application/javascript');
     res.send(modifiedData);
   });
 });
 
-
 app.use(express.static(path.join(__dirname)));
 // app.use(express.static(path.join(__dirname, 'src', 'components')));
 
-
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT} and ${SERV_IP}`);
+  console.log(`Server is running on http://${SERV_IP}:${PORT}`);
 });
