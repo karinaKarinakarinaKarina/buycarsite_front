@@ -9,14 +9,6 @@ if (UserID != null){
           .then(data => {
               let spanName = document.getElementById("user_name");
               spanName.textContent = `${data.nickname}`;
-
-              // let divFavorites = document.getElementById("favorites");
-              // data.favorites.forEach((item, index) => {
-              //   tagA = document.createElement("a");
-              //   tagA.textContent = `${index+1}. ${item.brand} ${item.model}, ${item.year} (${item.href})`;
-              //   divFavorites.appendChild(tagA);
-              //   divFavorites.appendChild(document.createElement("br"));
-              // });
           })
           .catch(error => {
               console.error('Error fetching list:', error);

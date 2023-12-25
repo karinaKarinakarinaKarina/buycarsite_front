@@ -6,9 +6,10 @@
     <title>BuyCar</title>
     <link rel="stylesheet" href="../styles/account.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/favoritebutton.css">
 </head>
 <body>
-    <script src="src/components/index.js" type="module"></script>
+    <script src="../components/favorites.js" type="module"></script>
     <header>
         <div class="header__line"></div>
             <div class="container">
@@ -24,14 +25,15 @@
                             </a>
                         </form>
                     </div>
+                    <div class="acc" id="account"></div>
                 </div>
             </div>
     </header>
     <div class="white-block">
         <a href="/index.html" class="return">Вернуться на главную</a>
-
-
-
+        <div class="filters_cars" id="allCars">
+            <a id="NotFavorites">У вас нет избранных объявлений, вернитесь на главную страницу, чтобы добавить их!</a>
+        </div>
         <footer id="footeracc">
             <div class="footer__info">
                 <div class="company">

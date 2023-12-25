@@ -384,3 +384,13 @@ input, select {
     align-items: center;
     justify-content: center;
 }
+
+.firstAccount-icon {
+    margin-left: 49px;
+    position: relative;
+    top: 6px;
+}
+
+.goBack{
+    color: #FFF;
+}
