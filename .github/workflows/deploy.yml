@@ -18,7 +18,7 @@ jobs:
         script: |
           cd carParserProjectTest/buycarsite_front
           docker stop $(docker ps -a -q)
-          git pull origin node_js
+          git pull
           docker-compose up --build -d
           cd ../Car-parser-project-back
           docker-compose up --build -d
