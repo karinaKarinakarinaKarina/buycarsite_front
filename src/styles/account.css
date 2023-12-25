@@ -89,7 +89,7 @@ body {
 .white-block {
     background-color: #fff; 
     width: 1440px;
-    height: 940px;
+    height: 780px;
     margin: 0 auto; 
 }
 
@@ -100,7 +100,7 @@ body {
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 21px; 
+    line-height: 21px; /* 116.667% */
     margin-left: 42px;
 }
 
@@ -125,137 +125,182 @@ body {
     height: 1px;
     background: #000;
     transition: width 0.3s ease;
-    display: block; 
+    display: block; /* Добавлено */
 }
 
 .return:hover::after {
     width: 204px;
 }
 
-.car_name {
-    margin-top: 42px;
-    text-align: center;
-    color: #000;
-    font-family: Saira;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; 
-}
-
-.imgs_desc {
-    margin-top: 4px;
+.avatar_buttons {
     display: flex;
 }
 
-.main_img {
-    margin-top: 72px;
-    margin-left: 117px;
-    width: 600px;
-    height: 499px;
-    overflow: hidden;
+.avatar {
+    margin-top: 160px;
+    margin-left: 305px;
 }
 
-.main_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.imgs {
-    display: flex;
-    margin-left: 117px;
-}
-
-.other_imgs {
-    margin-left: -120px;
-    color: #FFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; 
-    width: 120px;
-    height: 90px;
-    background: rgba(0, 0, 0, 0.6);
+.grayblock {
     position: relative;
-    overflow: hidden;
+    width: 265px;
+    height: 248px;
+    background: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.other_imgs::after {
-    content: "";
-    display: block;
-    margin-left: 2px;
-    margin-bottom: 33px;
-    width: 0; 
-    height: 1px; 
-    background-color: #FFF;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: width 0.3s ease; 
-}
-
-.other_imgs:hover::after {
-    width: 97%; 
-}
-
-
-.price {
-    margin-top: 90px;
-    margin-left: 226px;
+.name {
+    display: flex;
+    margin-top: 17px;
     color: #000;
-    font-family: Roboto;
-    font-size: 40px;
+    font-family: 'Saira', sans-serif;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 60% */
-}
-
-.description {
-    margin-top: 54px;
-    margin-left: 50px;
-}
-
-.characteristics {
-    margin-top: 26px;
-    color: #000;
-    font-family: Roboto;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
+    line-height: normal;
+    justify-content: center;
+    align-items: center;
 }
 
 a[type="link_button"] {
     color: #FFF;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 20px;
+    font-family: 'Saira', sans-serif;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 120% */
+    line-height: normal;
     background: #000;
-    width: 320px;
-    height: 50px;
+    width: 463px;
+    height: 46px;
     position: relative;
-    top: 35px;
+    margin-top: 54.8px;
     margin-left: 111px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-footer {
+.buttons {
+    margin-top: 106px;
+}
+
+.avatar_edit {
+    position: absolute;
+    display: flex;
+    margin-top: -30px;
+    margin-left: 68px;
+    color: #000;
+    font-family: 'Saira', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.forms {
+    margin-left: 42px;
+    margin-top: 178px;
+}
+
+
+.desc {
+    margin-top: 17px;
+    color: #000;
+    font-family: 'Saira', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.form {
+    width: 214px;
+    height: 20px;
+    background: #D9D9D9;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+.name, .log, .currentpassword, .newpassword, .confirmpassword {
+    display: flex;
+}
+
+[name="name"] {
+    margin-left: 208px;
+}
+
+[name="login"] {
+    margin-left: 198px;
+}
+
+[name="currentpassword"] {
+    margin-left: 121px;
+}
+
+[name="newpassword"] {
+    margin-left: 136px;
+}
+
+[name="confirmpassword"] {
+    margin-left: 14px;
+}
+
+a[type="savechanges"] {
+    color: #FFF;
+    font-family: 'Saira', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: #000;
+    width: 249px;
+    height: 39px;
+    position: relative;
+    margin-top: 72px;
+    margin-left: 538px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.saveChanges{
+   color: #FFF;
+   font-family: 'Saira', sans-serif;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   background: #000;
+   width: 249px;
+   height: 39px;
+   position: relative;
+   margin-top: 50px;
+   margin-left: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+#footeracc {
     display: flex;
     align-items: center;
     width: 1440px;
     height: 177px;
     background: #000;
-    margin-top: 132px;
+    margin-top: 240px;
+}
+
+#footereditacc {
+    display: flex;
+    align-items: center;
+    width: 1440px;
+    height: 177px;
+    background: #000;
+    margin-top: 171px;
 }
 
 .footer__info {
@@ -320,4 +365,32 @@ footer {
 input, select {
     border: none;
     outline: none;
+}
+
+.logout-button {
+    color: #FFF;
+    font-family: 'Saira', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: #000;
+    width: 463px;
+    height: 46px;
+    position: relative;
+    margin-top: 54.8px;
+    margin-left: 111px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.firstAccount-icon {
+    margin-left: 49px;
+    position: relative;
+    top: 6px;
+}
+
+.goBack{
+    color: #FFF;
 }
