@@ -20,6 +20,6 @@ jobs:
           docker stop $(docker ps -a -q)
           git pull origin node_js
           docker-compose up --build -d
-          cd carParserProjectTest/Car-parser-project-back
+          cd ../Car-parser-project-back
           docker-compose up --build -d
           echo "done"
