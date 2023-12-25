@@ -224,7 +224,7 @@ a[type="link_button"] {
     height: 20px;
     background: #D9D9D9;
     margin-top: 20px;
-    margin-left: 30px;
+    margin-left: auto;
 }
 
 .name, .log, .currentpassword, .newpassword, .confirmpassword {
@@ -268,7 +268,23 @@ a[type="savechanges"] {
     align-items: center;
     justify-content: center;
 }
-
+.saveChanges{
+   color: #FFF;
+   font-family: 'Saira', sans-serif;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   background: #000;
+   width: 249px;
+   height: 39px;
+   position: relative;
+   margin-top: 50px;
+   margin-left: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 #footeracc {
     display: flex;
     align-items: center;
@@ -349,4 +365,32 @@ a[type="savechanges"] {
 input, select {
     border: none;
     outline: none;
+}
+
+.logout-button {
+    color: #FFF;
+    font-family: 'Saira', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: #000;
+    width: 463px;
+    height: 46px;
+    position: relative;
+    margin-top: 54.8px;
+    margin-left: 111px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.firstAccount-icon {
+    margin-left: 49px;
+    position: relative;
+    top: 6px;
+}
+
+.goBack{
+    color: #FFF;
 }
