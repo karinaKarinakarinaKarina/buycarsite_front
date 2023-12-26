@@ -11,14 +11,14 @@ let listId = [];
 if (registered()){
     let divAcc = document.getElementById("account");
     let aAcc = document.createElement('a');
-    aAcc.href = `http://localhost:8000/src/pages/account.html?id=${UserID}`;
+    aAcc.href = `http://{{SERV_IP}}:3000/src/pages/account.html?id=${UserID}`;
     aAcc.classList.add("account-icon");
     let imgAcc = document.createElement('img');
     imgAcc.src = "../images/account-icon.png";
     console.log("Registered");
     aAcc.appendChild(imgAcc);
     divAcc.appendChild(aAcc);
-    fetch(`http://localhost:5000/selectFavoriteAdsALL/${UserID}`)
+    fetch(`http://{{SERV_IP}}:5000/selectFavoriteAdsALL/${UserID}`)
         .then(response => response.json())
         .then(data => {
             data.favoriteAds.forEach((item) => {
@@ -32,11 +32,11 @@ if (registered()){
         });
 }
 else{
-    location.href = 'http://localhost:8000/src/pages/login.html';
+    location.href = 'http://{{SERV_IP}}:3000/src/pages/login.html';
 }
 
 function setAdToUser(user_id, ad_id){
-    const urlForSet = `http://localhost:5000/setAdInUser/${user_id}/${ad_id}`;
+    const urlForSet = `http://{{SERV_IP}}:5000/setAdInUser/${user_id}/${ad_id}`;
     fetch(urlForSet)
         .then(response => response.json())
         .then(data => {
@@ -50,7 +50,7 @@ function setAdToUser(user_id, ad_id){
 }
 
 function deleteAdOfUser(user_id, ad_id){
-    const urlForDelete = `http://localhost:5000/deleteAdOfUser/${user_id}/${ad_id}`;
+    const urlForDelete = `http://{{SERV_IP}}:5000/deleteAdOfUser/${user_id}/${ad_id}`;
     fetch(urlForDelete)
         .then(response => response.json())
         .then(data => {
@@ -107,7 +107,7 @@ function viewAds(listAds){
             divPrice.textContent = `${item.price} ₽`;
             const a1 = document.createElement('a');
             const a2 = document.createElement('a');
-            a2.href = `http://localhost:8000/src/pages/car.html?id=${item.id}`;
+            a2.href = `http://{{SERV_IP}}:3000/src/pages/car.html?id=${item.id}`;
             a2.appendChild(Img);
             a1.classList.add("cars1");
             if (registered()){

@@ -3,7 +3,7 @@ const UserID = sessionStorage.getItem('id');
 if (UserID != null){
   let divAcc = document.getElementById("account");
   let aAcc = document.createElement('a');
-  aAcc.href = `http://localhost:8000/src/pages/account.html?id=${UserID}`;
+  aAcc.href = `http://{{SERV_IP}}:3000/src/pages/account.html?id=${UserID}`;
   aAcc.classList.add("firstAccount-icon");
   let aBack = document.createElement('a');
   aBack.textContent = "Назад";
@@ -17,7 +17,7 @@ if (UserID != null){
 
         const formData = new FormData(form);
 
-        fetch(`http://localhost:5000/account/${UserID}/changeParams`, {
+        fetch(`http://{{SERV_IP}}:5000/account/${UserID}/changeParams`, {
           method: 'POST',
           body: formData
         })
@@ -30,7 +30,7 @@ if (UserID != null){
 
 function changeParams(data){
   if (data.message == ""){
-    location.href = 'http://localhost:8000/src/pages/account.html';
+    location.href = 'http://{{SERV_IP}}:3000/src/pages/account.html';
   }
   else{
     while (document.getElementById("errorText") != null){

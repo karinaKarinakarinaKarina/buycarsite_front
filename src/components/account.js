@@ -16,7 +16,7 @@ if (UserID != null){
       const buttonLogout = document.getElementById("logout_button");
       buttonLogout.addEventListener('click', function() {
         sessionStorage.removeItem('id');
-        location.href = 'http://localhost:8000/index.html';
+        location.href = 'http://{{SERV_IP}}:3000/index.html';
       });
   });
 }

@@ -6,7 +6,7 @@ require('dotenv').config(); // Загрузка переменных окруж�
 const PORT = process.env.PORT || 3000;
 const SERV_IP = process.env.SERV_IP;
 
-app.get('/', (req, res) => {
+app.get(['/','/index.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 app.get('/favicon.ico', (req, res) => {
